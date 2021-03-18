@@ -1,9 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <link rel="stylesheet" type="text/css" href="bootstrap.css">
   <title>My site</title>
 </head>
 <body>
-<h1>Welcome!</h1>
+<div id="navbar"></div>
+<html>
+  <body>
+    <!-- Add a placeholder for the Twitch embed -->
+    <div id="twitch-embed"></div>
+
+    <!-- Load the Twitch embed script -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 1080,
+        height: 540,
+        channel: "lx_n0va",
+        layout: "video-with-chat",
+        theme: "dark",
+        allowfullscreen : "true",
+        // only needed if your site is also embedded on embed.example.com and othersite.example.com
+        parent: ["embed.example.com", "othersite.example.com"]
+      });
+    </script>
+  </body>
+</html>
+<script>
+        $(function(){
+            $("#navbar").load("header.html");
+        });
+</script>
 </body>
 </html>
